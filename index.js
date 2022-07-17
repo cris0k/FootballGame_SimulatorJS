@@ -7,12 +7,6 @@ var message = "=== THE PLAYOFFs TOURNAMENT BEGINS ==="
 console.log(message)
 console.log(lines)
 
-
-
-const getGoals = function() {
-    return Math.floor(Math.random() *10);
-}
-
 const teams = ['Norway', 'England', 'Spain', 'Germany', 'The Netherlands', 'Switzerland', 'Finland', 'Iceland']
 
 console.log( `The teams are:\n 
@@ -22,28 +16,34 @@ Group C: ${teams[4]} and ${teams[5]}
 Group D: ${teams[6]} and ${teams[7]}
 `)
 
-/* for (let i=0 ; i < teams.length; i++){
-    console.log(teams[i], getGoals())
-
-} */
 console.log( "=== The Quarter Final Stage ===\n")
-
-
-console.log(`${teams[0]}`,getGoals(), "-" ,getGoals(), `${teams[3]}`)
 
 class PlayOff {
     constructor(team1,team2){
         this.team1 = team1
         this.team2 = team2
-        this.goal = function() {
-            return Math.floor(Math.random() *10)
+        this.goal = function (value) {
+            value = Math.floor(Math.random() *10)
+            return value
         }
+    }
+
+    play() {
+        console.log(`${this.team1}`,this.goal(), "-",this.goal(), `${this.team2}`)
     }
 }
 
-const game = new PlayOff("Norway", "Germany")
 
-console.log(game.team1,game.goal(), "-",game.goal(), game.team2)
+const game1 = new PlayOff(`${teams[0]}`, `${teams[3]}`)
+const game2 = new PlayOff(`${teams[1]}`, `${teams[2]}`)
+const game3 = new PlayOff(`${teams[4]}`, `${teams[7]}`)
+const game4 = new PlayOff(`${teams[6]}`, `${teams[5]}`)
+
+game1.play()
+game2.play()
+game3.play()
+game4.play()
+
 
 
 

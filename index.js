@@ -69,11 +69,14 @@ const semiGame2 = new PlayOff(`${QFinalWinners[1]}`, `${QFinalWinners[3]}`)
 let semiFinalWinners = []
 let semiFinalLosers = []
 
-semiFinalWinners.push(semiGame1.play().winner)
-semiFinalWinners.push(semiGame2.play().winner)
+const semiGame1Result = semiGame1.play()
+const semiGame2Result = semiGame2.play()
 
-semiFinalLosers.push(semiGame1.play().loser)
-semiFinalLosers.push(semiGame2.play().loser)
+semiFinalWinners.push(semiGame1Result.winner)
+semiFinalWinners.push(semiGame2Result.winner)
+
+semiFinalLosers.push(semiGame1Result.loser)
+semiFinalLosers.push(semiGame2Result.loser)
 
 console.log(semiFinalWinners)
 console.log(semiFinalLosers)
@@ -83,6 +86,12 @@ console.log("\n========= 3rd and 4th Place =========\n")
 const thirdFourth = new PlayOff(`${semiFinalLosers[0]}`, `${semiFinalLosers[1]}`)
 
 thirdFourth.play().winner
+
+console.log("\n========= THE FINAL =========\n")
+
+const final = new PlayOff(`${semiFinalWinners[0]}`, `${semiFinalWinners[1]}`)
+
+final.play().winner
 
 
 

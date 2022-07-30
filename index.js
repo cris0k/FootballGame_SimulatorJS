@@ -6,7 +6,6 @@ console.log(lines)
 
 const teams = ['Norway', 'England', 'Spain', 'Germany', 'The Netherlands', 'Switzerland', 'Finland', 'Iceland']
 
-
 console.log( `The teams are:\n 
 Group A: ${teams[0]} and ${teams[1]}
 Group B: ${teams[2]} and ${teams[3]}
@@ -51,16 +50,29 @@ const game2 = new PlayOff(`${teams[1]}`, `${teams[2]}`)
 const game3 = new PlayOff(`${teams[4]}`, `${teams[7]}`)
 const game4 = new PlayOff(`${teams[6]}`, `${teams[5]}`)
 
-let winners = [];
+let QFinalWinners = [];
 
+QFinalWinners.push(game1.play().winner)
+QFinalWinners.push(game2.play().winner)
+QFinalWinners.push(game3.play().winner)
+QFinalWinners.push(game4.play().winner)
 
-winners.push(game1.play().winner)
-winners.push(game2.play().winner)
-winners.push(game3.play().winner)
-winners.push(game4.play().winner)
-
-console.log(winners)
+console.log(QFinalWinners)
 
 console.log("\n========= Semifinal Stage =========\n")
+
+const semiGame1 = new PlayOff(`${QFinalWinners[0]}`, `${QFinalWinners[2]}`)
+const semiGame2 = new PlayOff(`${QFinalWinners[1]}`, `${QFinalWinners[3]}`)
+
+let semiFinalWinners = []
+
+semiFinalWinners.push(semiGame1.play().winner)
+semiFinalWinners.push(semiGame2.play().winner)
+
+console.log(semiFinalWinners)
+
+
+
+
 
 

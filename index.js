@@ -39,8 +39,8 @@ class PlayOff {
             loser: team1Goals < team2Goals ? this.team1 : this.team2,
         };
 
-        console.log(`${this.team1}`, team1Goals, "-",team2Goals, `${this.team2}`,"=>", result.winner)
-        console.log(result)
+        console.log(`${this.team1}`, team1Goals, "-",team2Goals, `${this.team2}`,"=>", result.winner,'\n')
+        
         return result;
 
     }
@@ -59,8 +59,6 @@ QFinalWinners.push(game2.play().winner)
 QFinalWinners.push(game3.play().winner)
 QFinalWinners.push(game4.play().winner)
 
-console.log(QFinalWinners)
-
 console.log("\n========= Semifinal Stage =========\n")
 
 const semiGame1 = new PlayOff(`${QFinalWinners[0]}`, `${QFinalWinners[2]}`)
@@ -78,20 +76,23 @@ semiFinalWinners.push(semiGame2Result.winner)
 semiFinalLosers.push(semiGame1Result.loser)
 semiFinalLosers.push(semiGame2Result.loser)
 
-console.log(semiFinalWinners)
-console.log(semiFinalLosers)
-
-console.log("\n========= 3rd and 4th Place =========\n")
+console.log("========= 3rd and 4th Place =========\n")
 
 const thirdFourth = new PlayOff(`${semiFinalLosers[0]}`, `${semiFinalLosers[1]}`)
 
 thirdFourth.play().winner
 
-console.log("\n========= THE FINAL =========\n")
+console.log("========= THE FINAL =========\n")
 
 const final = new PlayOff(`${semiFinalWinners[0]}`, `${semiFinalWinners[1]}`)
 
-final.play().winner
+const FinalResult = final.play()
+
+console.log(lines)
+console.log(`${FinalResult.winner}`, "is the Euro Women's Cup WINNER !")
+console.log(lines)
+
+
 
 
 

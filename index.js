@@ -35,10 +35,12 @@ class PlayOff {
         }
 
         const result = {
-            winner: team1Goals > team2Goals ? this.team1 : this.team2
+            winner: team1Goals > team2Goals ? this.team1 : this.team2,
+            loser: team1Goals < team2Goals ? this.team1 : this.team2,
         };
 
         console.log(`${this.team1}`, team1Goals, "-",team2Goals, `${this.team2}`,"=>", result.winner)
+        console.log(result)
         return result;
 
     }
@@ -65,12 +67,22 @@ const semiGame1 = new PlayOff(`${QFinalWinners[0]}`, `${QFinalWinners[2]}`)
 const semiGame2 = new PlayOff(`${QFinalWinners[1]}`, `${QFinalWinners[3]}`)
 
 let semiFinalWinners = []
+let semiFinalLosers = []
 
 semiFinalWinners.push(semiGame1.play().winner)
 semiFinalWinners.push(semiGame2.play().winner)
 
-console.log(semiFinalWinners)
+semiFinalLosers.push(semiGame1.play().loser)
+semiFinalLosers.push(semiGame2.play().loser)
 
+console.log(semiFinalWinners)
+console.log(semiFinalLosers)
+
+console.log("\n========= 3rd and 4th Place =========\n")
+
+const thirdFourth = new PlayOff(`${semiFinalLosers[0]}`, `${semiFinalLosers[1]}`)
+
+thirdFourth.play().winner
 
 
 

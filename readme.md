@@ -1,11 +1,13 @@
 ## Football Game Simulator
 
-This a program that simulates a football game. 
-It chooses 8 random teams from 16 and the results will be shown in your terminal.
+This is a program that simulates a football game using only Javascript.
+
+It chooses 8 random teams from 16, and the results of every game and the 
+different stages will be shown in your terminal.
 
 # How to run the program
 
-You can clone the project with
+You can clone the project with:
 
 ```
 git clone https://github.com/cris0k/FootballGame_SimulatorJS.git
@@ -18,4 +20,4 @@ node index.js
 ```
 
 The result should be something like this 
-# ![alt text](url)
+# ![alt text](https://github.com/cris0k/FootballGame_SimulatorJS/blob/main/media/footballgameJS.png)

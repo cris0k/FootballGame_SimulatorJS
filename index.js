@@ -1,16 +1,16 @@
+import {PlayOffTeams} from "./teams.js"
+
 const lines = "=".repeat(38)
 
 console.log(lines)
 console.log("=== THE PLAYOFFs TOURNAMENT BEGINS ===")
 console.log(lines)
 
-const teams = ['Norway', 'England', 'Spain', 'Germany', 'The Netherlands', 'Switzerland', 'Finland', 'Iceland']
-
-console.log( `The teams are:\n 
-Group A: ${teams[0]} and ${teams[1]}
-Group B: ${teams[2]} and ${teams[3]}
-Group C: ${teams[4]} and ${teams[5]}
-Group D: ${teams[6]} and ${teams[7]}
+console.log( `The PlayOffTeams are:\n 
+Group A: ${PlayOffTeams[0]} and ${PlayOffTeams[1]}
+Group B: ${PlayOffTeams[2]} and ${PlayOffTeams[3]}
+Group C: ${PlayOffTeams[4]} and ${PlayOffTeams[5]}
+Group D: ${PlayOffTeams[6]} and ${PlayOffTeams[7]}
 `)
 
 console.log( "===== The Quarter Final Stage =====\n")
@@ -30,8 +30,8 @@ class PlayOff {
         let team2Goals = this.goal()
 
         while (team1Goals === team2Goals) {
-         team1Goals = this.goal()
-         team2Goals = this.goal()
+            team1Goals = this.goal()
+            team2Goals = this.goal()
         }
 
         const result = {
@@ -47,10 +47,10 @@ class PlayOff {
     
 }
 
-const game1 = new PlayOff(`${teams[0]}`, `${teams[3]}`)
-const game2 = new PlayOff(`${teams[1]}`, `${teams[2]}`)
-const game3 = new PlayOff(`${teams[4]}`, `${teams[7]}`)
-const game4 = new PlayOff(`${teams[6]}`, `${teams[5]}`)
+const game1 = new PlayOff(`${PlayOffTeams[0]}`, `${PlayOffTeams[3]}`)
+const game2 = new PlayOff(`${PlayOffTeams[1]}`, `${PlayOffTeams[2]}`)
+const game3 = new PlayOff(`${PlayOffTeams[4]}`, `${PlayOffTeams[7]}`)
+const game4 = new PlayOff(`${PlayOffTeams[6]}`, `${PlayOffTeams[5]}`)
 
 let QFinalWinners = [];
 

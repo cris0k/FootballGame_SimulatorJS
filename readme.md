@@ -18,5 +18,4 @@ node index.js
 ```
 
 The result should be something like this 
-
-![alt text](../../../Pictures/footballgameJS.png)
+# ![alt text](url)

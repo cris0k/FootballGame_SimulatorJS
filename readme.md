@@ -1,11 +1,11 @@
-## Football Game Simulator
+# Football Game Simulator
 
 This is a program that simulates a football game using only Javascript.
 
 It chooses 8 random teams from 16, and the results of every game and the 
 different stages will be shown in your terminal.
 
-# How to run the program
+## How to run the program
 
 You can clone the project with:
 
